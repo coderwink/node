@@ -18,3 +18,14 @@
  fs.readdir(wwwDir, (err, files) => {
 
  })
+
+## art-template 模板引擎
+### 核心方法 +
+// 基于模板名渲染模板
+template(filename, data);
+
+// 将模板源代码编译成函数
+template.compile(source, options);
+
+// 将模板源代码编译成函数并立刻执行
+template.render(source, data, options);   ==>  template.render('hello {{name}}', { name: 'jack'})

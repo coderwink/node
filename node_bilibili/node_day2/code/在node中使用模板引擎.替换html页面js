@@ -1,0 +1,25 @@
+var http = require('http')
+var fs = require('fs')
+var template = require('art-template')
+// http.createServer((req, res) => {
+  console.log("哈哈")
+  fs.readFile('./tmp.html', ( err, data ) => {
+    if(err) {
+      return res.end('读取文件失败')
+    }
+    var ret = template.render(data.toString(), {
+      name: "jack",
+      age: '18',
+      hobbies: [
+        "听音乐",
+        "看动漫",
+        "打游戏",
+        "敲代码"
+      ],
+      title: 'majito'
+    })
+    console.log(ret) 
+  })
+  
+// }).listen(3000)
+
